@@ -37,7 +37,7 @@
 	                        <h1 class="hero-title mt-0">Landing template for startups</h1>
 	                        <p class="hero-paragraph">Our landing page template works on all devices, so you only have to set it up once, and get beautiful results forever.</p>
 	                        <div class="hero-cta">
-								<a class="button button-primary button-wide-mobile" href="/pricing.html" id="testably-60e0d2adf3cfc5eec51df731"
+								<a class="button button-primary button-wide-mobile" href="https://tailwindcss.com/docs/list-style-position" id="testably-60d8aabef3cfc5eec51df72d"
 								>Get early access</a>
 							</div>
 						</div>
@@ -185,50 +185,12 @@
 
     <script src="dist/js/main.min.js"></script>
 		<script>
-			const elId = 'testably-60e0d2adf3cfc5eec51df731'
-const testType = 'copy'
-const variationCount = 3
-const conversionUrl = '/pricing.html'
-const variationInfo = [ ['60e0d2bef3cfc5eec51df732', 'See our plans'],['60e0d2c2f3cfc5eec51df733', 'Learn more'],['60e0d2c6f3cfc5eec51df734', 'Get started now'], ]
-
-//  GRAB TARGET ELEMENT FOR ABTEST AND NUMBER OF VARIATIONS IN TEST
-const el = document.getElementById(elId)
-
-//  SELECT RANDOM TEST VARIATION, SET ACTIVE ID, IMPLEMENT A/B TEST ON EL
-const getActiveVariationIndex = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min
-
-const activeVariationIndex = getActiveVariationIndex(0, variationCount - 1)
-
-// if copy, replace textContent
-el.textContent = variationInfo[activeVariationIndex][1]
-
-// if src, replace src
-el.src = variationInfo[activeVariationIndex][1]
-
-// if color, replace bg
-el.style.backgroundColor = variationInfo[activeVariationIndex][1]
-
-//  API REQUEST TO INCREMENT SESSIONS OF ACTIVE VARIATIONS
-//  on load send axios request to update sessions
-//  implement add event handler for all anchor tags with converisonURL as destination
-//  implement on click events for all anchor tags, sends axios request to update conversions
-
-const testablyUpdate = (isConversion) => {
-    const xhr = new XMLHttpRequest()
-    xhr.open('PATCH', `http://localhost:1407/${variationInfo[activeVariationIndex][0]}`)
-    xhr.setRequestHeader("Accept", "application/json");
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.setRequestHeader("Access-Control-Allow-Origin", window.location.href);
-    const bodyData = {
-        id: variationInfo[activeVariationIndex][0],
-        sessions: true,
-        conversions: isConversion,
-    }
-		console.log(bodyData)
-    xhr.send(JSON.stringify(bodyData))
-}
-
-window.onload = testablyUpdate(false)
-		</script>
+			const elId = 'testably-60d8aabef3cfc5eec51df72d'
+			const testType = 'colour'
+			const variationCount = 3
+			const conversionUrl = 'https://tailwindcss.com/docs/list-style-position'
+			const variationInfo = [ ['60d9d666f3cfc5eec51df72e', '#d24646'],['60d9d721f3cfc5eec51df72f', '#f50000'],['60d9d836f3cfc5eec51df730', '#3ddc32'], ]
+			const el=document.getElementById(elId),getActiveVariationIndex=(e,t)=>Math.floor(Math.random()*(t-e+1))+e,activeVariationIndex=getActiveVariationIndex(0,variationCount-1);"copy"===testType&&(el.textContent=variationInfo[activeVariationIndex][1]),"src"===testType&&(el.src=variationInfo[activeVariationIndex][1]),"colour"===testType&&(el.style.backgroundColor=variationInfo[activeVariationIndex][1]);const testablyUpdate=e=>{const t=new XMLHttpRequest;t.open("PATCH",`http://localhost:1407/${variationInfo[activeVariationIndex][0]}`),t.setRequestHeader("Accept","application/json"),t.setRequestHeader("Content-Type","application/json"),t.setRequestHeader("Access-Control-Allow-Origin",window.location.href);const n={id:variationInfo[activeVariationIndex][0],sessions:!0,conversions:e};t.send(JSON.stringify(n))};window.onload=testablyUpdate(!1);const conversionURLElements=document.querySelectorAll(`a[href="${conversionUrl}"]`);conversionURLElements.forEach(e=>e.addEventListener("click",function(){testablyUpdate(!0)}));
+			</script>
 </body>
 </html>
