@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tree App</title>
+    <title>Index A</title>
     <link href="https://fonts.googleapis.com/css?family=Heebo:400,700|Oxygen:700" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/style.css">
     <script src="https://unpkg.com/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
@@ -34,11 +34,10 @@
                 <div class="container-sm">
                     <div class="hero-inner">
 						<div class="hero-copy">
-	                        <h1 class="hero-title mt-0" id="testably-612fc0165352c348ed0a0454"
-													>Download today. Save tomorrow.</h1>
+	                        <h1 class="hero-title mt-0">Download today. Save tomorrow.</h1>
 	                        <p class="hero-paragraph">Our innovative green technology converts app downloads into planting trees. Pretty neat, right? Plant your first tree today.</p>
 	                        <div class="hero-cta">
-								<a data-testably-conversion class="button button-primary button-wide-mobile" href="/download.html"
+								<a class="button button-primary button-wide-mobile" href="/download.html"
 								>Download now</a>
 							</div>
 						</div>
@@ -122,7 +121,7 @@
 								<h2 class="section-title mt-0">Stay in the know</h2>
 								<p class="section-paragraph">Lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation.</p>
 								<div class="cta-cta">
-									<a class="button button-primary button-wide-mobile" href="/download.html"
+									<a class="button button-primary button-wide-mobile" href="/download.html" data-testably-conversion
 									>Download</a>
 								</div>
 							</div>
@@ -186,18 +185,5 @@
     </div>
 
     <script src="dist/js/main.min.js"></script>
-
-			<script>; const elId = 'testably-612fc0165352c348ed0a0454'; const testType = 'copy'; const variationCount = 2; 
-        const variationInfo = [
-        ['612fc0205352c371370a0455', 'My catchy headline 1'],['612fc02b5352c32faa0a0456', 'My catchy headline 2'],
-        ]
-       
-        const
-        el=document.getElementById(elId),getActiveVariationIndex=(a,b)=>Math.floor(Math.random()*(b-a+1))+a,activeVariationIndex=getActiveVariationIndex(0,variationCount-1);"copy"===testType&&(el.textContent=variationInfo[activeVariationIndex][1]),"src"===testType&&(el.src=variationInfo[activeVariationIndex][1]),"colour"===testType&&(el.style.backgroundColor=variationInfo[activeVariationIndex][1]);const
-        testablyUpdate=a=>{const b=new
-        XMLHttpRequest;b.open("PATCH",`http://localhost:1407/${variationInfo[activeVariationIndex][0]}`),b.setRequestHeader("Accept","application/json"),b.setRequestHeader("Content-Type","application/json"),b.setRequestHeader("Access-Control-Allow-Origin",window.location.href);const
-        c={id:variationInfo[activeVariationIndex][0],sessions:!0,conversions:a};b.send(JSON.stringify(c))};window.onload=testablyUpdate(!1);const
-        conversionElements=document.querySelectorAll("[data-testably-conversion]");conversionElements.forEach(a=>a.addEventListener("click",function(){testablyUpdate(!0)}));
-       </script>
 </body>
 </html>
