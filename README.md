@@ -1,3 +1,5 @@
+This demo site uses the open-source Venus template (information below) to demonstrate the client-side experience of using Testably.
+
 # Venus
 
 A landing page template.
